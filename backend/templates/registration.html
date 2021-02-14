@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bulacan College of Commerce and Trade</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="creg">
+	<header class="header">
+		<nav class="navbar navbar-style">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href=""> <img class="logo" src="{% static 'image/logo.png' %}"></a>
+				</div>
+				<div class="collapse navbar-collapse" id="micon">
+
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="{% url 'backend:index' %}">Home</a></li>
+						<li><a href="{% url 'backend:login' %}">Log in</a></li>
+						<li><a href="{% url 'backend:contact-us' %}">Contact Us</a></li>
+						<li><a href="{% url 'backend:about-us' %}">About</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+		<div class="reg">
+			<div style="background-color: firebrick; color: white;">{{error_message}}</div>
+			<div class="head1">
+				<h2 class="form-header text-center">Registration Form</h2>
+			</div>
+			<form action="" id="form-reg" class="reg-form" method="POST">
+				{% csrf_token %}
+				{{error_message}}
+				<div class="form-group">
+					<label for="username">Username: </label>
+					<input type="text" id="username" name="username" required="" />
+				</div>
+				<div class="form-group">
+					<label for="password">Password: </label>
+					<input type="password" id="password" name="password" required="" />
+
+				</div>
+				<div class="form-group">
+					<label for="email">Email: </label>
+					<input type="email" name="email" id="email" required="" />
+
+				</div>
+				<div class="form-group">
+					<label for="lname">Last name: </label>
+					<input type="text" name="last_name" id="lname" required="" />
+
+				</div>
+				<div class="form-group">
+					<label for="fname">First name: </label>
+					<input type="text" id="fname" name="first_name" required="" />
+
+				</div>
+				<div class="form-group">
+					<label for="middle_name">Middle name: </label>
+					<input type="text" name="middle_name" placeholder="(optional)" id="mname" />
+
+				</div>
+
+				<div class="form-check-inline">
+					<label class="form-check-label">Gender:
+						<input type="radio" class="form-check-input" name="gender" id="female" value="Female"
+							required="" /> Female
+					</label>
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="gender" id="male" value="Male" required="" />
+						Male
+					</label>
+				</div>
+
+				<div class="form-group">
+					<label for="bday">Birthday: </label>
+					<input type="date" id="bday" name="birthdate" required="" />
+				</div>
+
+				<div class="custom-select">
+					<label for="tracks">Track/Strand: </label>
+
+					<select name="strand">
+						{% for item in strand %}
+						<option value="{{item.id}}"> {{ item.strand_name}}
+						</option>
+						{% endfor %}
+					</select>
+
+				</div>
+				<input type="reset" class="btnr"></input>
+				<a href="" style="color: white"> <input type="submit" class="btns">Submit</a>
+			</form>
+		</div>
+	</header>
+</body>
+
+</html>

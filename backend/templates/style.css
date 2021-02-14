@@ -1,0 +1,175 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Times New Roman;
+}
+
+.header
+{
+	height: 100vh;
+	
+}
+.navbar-style
+{
+	box-shadow: 0 5px 5px #B22222;
+	text-transform: uppercase;
+}
+.logo{
+	height: 80px;
+	width: 200px;
+	padding: 3px 5px;
+}
+.navbar-nav
+{
+	font-size: 15px;
+	padding: 10px 15px;
+}
+.icon-bar
+{
+	background: #B22222;
+}
+li a
+{
+	color: #B22222;
+}
+.txt1
+{
+	font-size: 40px;
+	padding: 20px 0px;
+	font-family: bold;
+	color: #B22222;
+	
+}
+.txt2{
+	font-size: 25px;
+}
+a.btn{
+	margin: 10px 10px;
+}
+a.btn-first{
+	height: 43px;
+	background: transparent;
+	border: 2px solid #B22222;
+	color: black;
+	font-size: 20px;
+	margin: 25px 0px;
+	
+}
+ul.a{
+	
+	list-style-type: circle;
+	list-style-position: center;
+	margin-left: 40px;
+}
+ul li{
+	
+	margin: 10px;
+    float:left; 
+	margin-right:20px;
+	
+}
+body.contactus{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: Times New Roman;
+	
+}
+.contact{
+	position: relative;
+	text-align: center;
+	background: url(bg.png);
+	background-size: cover;
+}
+.content h2{
+	color: #B22222;
+	padding: 5px 0px;
+}
+.about h1{
+	color: #B22222;
+	padding: 5px 0px;
+}
+.about{
+	text-align: center;
+	background: url(bg.png);
+	background-size: cover;
+}
+.about h3{
+	color: #B22222;
+	
+}
+.form-login{
+	max-width: 380px;
+  margin: 0 auto;
+  padding: 15px 40px 50px;
+  border: 1px solid #B22222;
+  border-radius: 10px;
+  
+}
+.form-login input[type="text"], .form-login input[type="password"] {
+  margin-bottom: 20px;
+}
+.form-login .form-control {
+  padding: 10px;
+}
+.form-login .form-header{
+	
+  margin-bottom: 50px;
+}
+.loginform{
+
+  margin: 80px;
+   
+  
+}
+.form-login .checkbox{
+	margin: 10px 20px;
+}
+.form-login .btn-first{
+	height: 33px;
+	width: 100px;
+	font-size: 15px;
+}
+.button btn-lg{
+	background: #B22222; 
+}
+.reg{
+	max-width: 500px;
+	text-align: center;
+  margin: 0 auto;
+  padding: 15px 40px 50px;
+  border: 1px solid #B22222;
+  border-radius: 10px;
+  font-size: 15px;
+
+}
+.oldstudreg{
+	max-width: 500px;
+	text-align: center;
+  margin: 0 auto;
+  padding: 15px 40px 50px;
+  border: 1px solid #B22222;
+  border-radius: 10px;
+}
+.head1 h2{
+	
+	font-size: 40px;
+	
+}
+.form-group i{
+	position: absolute;
+	right: 550px;
+	bottom: 435px;
+}
+.btnr , .btns{
+	background-color: #B22222;
+	color: white;
+	padding: 5px 10px;
+	font-size: 20px;
+	margin: 10px;
+}
+a{
+	color: white;
+}
+

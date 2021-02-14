@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bulacan College of Commerce and Trade</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<header class="header">
+		<nav class="navbar navbar-style">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href=""> <img class="logo" src="{% static 'image/logo.png' %}"></a>
+				</div>
+				<div class="collapse navbar-collapse" id="micon">
+
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="{% url 'backend:index' %}">Home</a></li>
+						<li><a href="{% url 'backend:login' %}">Log in</a></li>
+						<li><a href="{% url 'backend:contact-us' %}">Contact Us</a></li>
+						<li><a href="{% url 'backend:about-us' %}">About</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+
+		<div class="loginform text-center">
+
+			<form id="student-login" method="POST" class="form-login">
+				{% csrf_token %}
+				<div style="color: firebrick;">{{error_message}}</div>
+				<h2 class="form-header text-center">Login Account</h2>
+				<input type="text" class="form-control" name="username" placeholder="Username" required=""
+					autofocus="" />
+				<input type="password" class="form-control" name="password" placeholder="Password" required="" />
+				<button type="submit" class="btn btn-first">Login</button>
+			</form>
+
+		</div>
+
+	</header>
+</body>
+
+</html>

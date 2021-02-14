@@ -1,0 +1,1 @@
+web: gunicorn bcct.wsgi --log-file -

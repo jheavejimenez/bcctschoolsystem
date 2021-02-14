@@ -1,0 +1,65 @@
+{% extends "admin/base.html" %}
+
+{% block title %}BCCT School{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    #header,
+    .module caption,
+    #group_form>div>fieldset>div.form-row.field-permissions>div>div.related-widget-wrapper>div>div.selector-chosen>h2,
+    .module h2,
+    #section_form>div>fieldset:nth-child(2)>div>div>div.related-widget-wrapper>div>div.selector-chosen>h2,
+    #section_form>div>fieldset:nth-child(3)>div>div>div.related-widget-wrapper>div>div.selector-chosen>h2 {
+        background-color: maroon;
+    }
+
+
+    div.breadcrumbs {
+        background-color: rgb(125, 125, 125);
+        ;
+    }
+
+    .model-group a,
+    .model-user a,
+    .model-faculty a,
+    .model-grade a,
+    .model-section a,
+    .model-staff a,
+    .model-student a,
+    .model-subject a {
+        color: #666;
+    }
+
+    #content-main>div.app-auth.module>table>caption>a,
+    #content-main>div.app-backend.module>table>caption>a {
+        color: #FFFFCC;
+    }
+
+    #content-main>ul>li>a:hover {
+        background-color: maroon;
+    }
+
+    #subject_form>div>div>input.default,
+    #student_form>div>div>input.default,
+    #staff_form>div>div>input.default,
+    #section_form>div>div>input.default,
+    #grade_form>div>div>input.default {
+        background-color: maroon;
+    }
+
+    input[type="submit"] {
+        background-color: #ba2121;
+    }
+
+    input[type="submit"]:hover {
+        background-color: maroon;
+    }
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">BCCT School</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

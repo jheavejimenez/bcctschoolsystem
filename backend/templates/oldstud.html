@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bulacan College of Commerce and Trade</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="creg">
+	<header class="header">
+		<nav class="navbar navbar-style">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href=""> <img class="logo" src="{% static 'image/logo.png' %}"></a>
+				</div>
+				<div class="collapse navbar-collapse" id="micon">
+
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="{% url 'backend:index' %}">Home</a></li>
+						<li><a href="{% url 'backend:login' %}">Log in</a></li>
+						<li><a href="{% url 'backend:contact-us' %}">Contact Us</a></li>
+						<li><a href="{% url 'backend:about-us' %}">About</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+		<div class="oldstudreg">
+			<div class="head1">
+				<h2 class="form-header text-center">Registration Form</h2>
+			</div>
+			<a class="btn btn-first" href="{% url 'backend:oldstud' %}"> OLD STUDENT</a>
+			<a class="btn btn-first" href="{% url 'backend:registration' %}"> NEW STUDENT</a>
+			<form id="oldstudform-reg" class="oldstudreg-form">
+
+				<div class="form-group">
+					<label for="email">Email: </label>
+					<input type="email" id="email" required="" />
+
+				</div>
+				<div class="form-group">
+					<label for="lname">Last name: </label>
+					<input type="text" id="lname" required="" />
+
+				</div>
+				<div class="form-group">
+					<label for="fname">First name: </label>
+					<input type="text" id="fname" required="" />
+
+				</div>
+				<div class="form-group">
+					<label for="mname">Middle name: </label>
+					<input type="text" placeholder="(optional)" id="mname" />
+
+				</div>
+				<div class="custom-select">
+					<label for="tracks">Year Level: </label>
+					<select>
+
+						<option value="0">---</option>
+						<option value="1">Grade 11</option>
+						<option value="2">Grade 12</option>
+
+					</select>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label">Sex:
+						<input type="radio" class="form-check-input" name="optradio" id="female" value="F"
+							required="" /> Female
+					</label>
+					<label class="form-check-label">
+						<input type="radio" class="form-check-input" name="optradio" id="male" value="M" required="" />
+						Male
+					</label>
+				</div>
+
+				<div class="form-group">
+					<label for="bday">Birthday: </label>
+					<input type="date" id="bday" required="" />
+
+				</div>
+
+				<div class="custom-select">
+					<label for="tracks">Track/Strand: </label>
+					<select>
+
+						<option value="0">---</option>
+						<option value="1">TVL - Information and Communication Technology</option>
+						<option value="2">Accountancy and Business Management</option>
+						<option value="3">Humanities and Social Science</option>
+						<option value="4">General Academic Strand</option>
+
+					</select>
+				</div>
+				<input type="reset" class="btnr"></input>
+
+				<a href="login.html" style="color: white" onclick="alert('Your response has been submitted')"> <button
+						type="button" class="btns">Submit</a>
+
+
+			</form>
+		</div>
+	</header>
+</body>
+
+</html>

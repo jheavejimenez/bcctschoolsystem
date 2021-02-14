@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Bulacan College of Commerce and Trade</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="contactus">
+	<header class="header">
+		<nav class="navbar navbar-style">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href=""> <img class="logo" src="{% static 'image/logo.png' %}"></a>
+				</div>
+				<div class="collapse navbar-collapse" id="micon">
+
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="{% url 'backend:index' %}">Home</a></li>
+						<li><a href="{% url 'backend:login' %}">Log in</a></li>
+						<li><a href="{% url 'backend:contact-us' %}">Contact Us</a></li>
+						<li><a href="{% url 'backend:about-us' %}">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<section class="contact">
+			<div class="content">
+				<h2>Contact Us</h2>
+			</div>
+			<div class="container">
+				<div class="contactInfo">
+					<div class="box">
+						<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+							<div class="text">
+								<h3>Address</h3>
+								<p>524 Carriedo Avenue Muzon,<br>City of San Jose del Monte, Bulacan</p><br>
+							</div>
+						</div>
+					</div>
+					<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i>
+						<div class="text">
+							<h3>Phone</h3>
+							<p>0939-924-1906</p><br>
+						</div>
+					</div>
+					<div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+						<div class="text">
+							<h3>Email</h3>
+							<p>bcctmuzon@gmail.com</p><br>
+						</div>
+					</div>
+					<div class="icon"><i class="fa fa-facebook" aria-hidden="true"></i></i>
+						<div class="text">
+							<h3>Follow us</h3>
+							<p>@BCCT524</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</header>
+</body>
+
+</html>
