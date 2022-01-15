@@ -76,9 +76,8 @@ class Teacher(Profile):
         return f'{self.get_full_name()}'
 
     def save(self, *args, **kwargs):
-        if self.pk is None:
-            if self.role.name == "Teacher":
-                self.status = "NOT YET ASSIGNED"
+        if self.pk is None and self.role.name == "Teacher":
+            self.status = "NOT YET ASSIGNED"
         super(Teacher, self).save(*args, **kwargs)
 
 
