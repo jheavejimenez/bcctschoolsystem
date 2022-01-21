@@ -18,9 +18,7 @@ class StudentGradeInline(admin.TabularInline):
         'get_student_section', 'get_student_subject', 'get_numeric_grade')
 
     def get_numeric_grade(self, obj=Grade):
-        if obj.numeric_grade == 0:
-            return "Not Yet Set"
-        return obj.numeric_grade
+        return "Not Yet Set" if obj.numeric_grade == 0 else obj.numeric_grade
     get_numeric_grade.short_description = "Grade"
 
     def get_student_section(self, obj=Grade):
@@ -73,21 +71,15 @@ class AllStudentAdmin(admin.ModelAdmin):
         return Student.objects.filter(section=sec)
 
     def get_section(self, obj):
-        if obj.section is None:
-            return "Not Yet Enrolled"
-        return obj.section
+        return "Not Yet Enrolled" if obj.section is None else obj.section
     get_section.short_description = "Section"
 
     def get_name(self, obj):
-        if obj is None:
-            return ""
-        return obj.get_full_name()
+        return "" if obj is None else obj.get_full_name()
     get_name.short_description = "Full Name"
 
     def get_gender(self, obj):
-        if obj is None:
-            return ""
-        return obj.gender
+        return "" if obj is None else obj.gender
     get_gender.short_description = "Gender"
 
     def has_change_permission(self, request, obj=None):
@@ -111,8 +103,7 @@ class TeacherAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         def codeGenerator():
             ramdom = uuid.uuid4().hex[:5].lower()
-            finalramdom = str(obj.username) + str(ramdom)
-            return finalramdom
+            return str(obj.username) + str(ramdom)
 
         if not change:
             raw_pass = codeGenerator()
@@ -137,9 +128,7 @@ class TeacherAdmin(admin.ModelAdmin):
                 request, obj, form, change)
 
     def get_readonly_fields(self, request, obj=None):
-        if obj:
-            return ('my_password',)
-        return ('get_status', 'get_name')
+        return ('my_password', ) if obj else ('get_status', 'get_name')
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = super(TeacherAdmin, self).get_fields(request, obj)
@@ -158,15 +147,11 @@ class TeacherAdmin(admin.ModelAdmin):
         )
 
     def get_status(self, obj):
-        if obj is None:
-            return ""
-        return obj.status
+        return "" if obj is None else obj.status
     get_status.short_description = "Status"
 
     def get_name(self, obj):
-        if obj is None:
-            return ""
-        return obj.get_full_name()
+        return "" if obj is None else obj.get_full_name()
     get_name.short_description = "Full Name"
 
 
@@ -182,8 +167,7 @@ class StudentAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         def codeGenerator():
             ramdom = uuid.uuid4().hex[:5].lower()
-            finalramdom = str(obj.username) + str(ramdom)
-            return finalramdom
+            return str(obj.username) + str(ramdom)
 
         if not change:
             raw_pass = codeGenerator()
@@ -229,21 +213,15 @@ class StudentAdmin(admin.ModelAdmin):
         )
 
     def get_section(self, obj):
-        if obj.section is None:
-            return "Not Yet Enrolled"
-        return obj.section
+        return "Not Yet Enrolled" if obj.section is None else obj.section
     get_section.short_description = "Section"
 
     def get_status(self, obj):
-        if obj is None:
-            return ""
-        return obj.status
+        return "" if obj is None else obj.status
     get_status.short_description = "Status"
 
     def get_name(self, obj):
-        if obj is None:
-            return ""
-        return obj.get_full_name()
+        return "" if obj is None else obj.get_full_name()
     get_name.short_description = "Full Name"
 
 
@@ -306,9 +284,7 @@ class GradeInline(admin.TabularInline):
                        'get_student_gender', 'get_student_section', 'get_numeric_grade')
 
     def get_numeric_grade(self, obj=Grade):
-        if obj.numeric_grade == 0:
-            return "Not Yet Set"
-        return obj.numeric_grade
+        return "Not Yet Set" if obj.numeric_grade == 0 else obj.numeric_grade
     get_numeric_grade.short_description = "Grade"
 
     def get_student_name(self, obj=Grade):
@@ -366,9 +342,7 @@ class SubjectAdmin(admin.ModelAdmin):
         return ('get_numeric_grade')
 
     def get_numeric_grade(self, obj=Grade):
-        if obj.numeric_grade == 0:
-            return "Not Yet Set"
-        return obj.numeric_grade
+        return "Not Yet Set" if obj.numeric_grade == 0 else obj.numeric_grade
     get_numeric_grade.short_description = "Grade"
 
 
@@ -396,14 +370,10 @@ class SectionAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
 
-        if obj:
-            return ('section_name', 'year_level', 'strand', 'adviser')
-        return ()
+        return ('section_name', 'year_level', 'strand', 'adviser') if obj else ()
 
     def get_inlines(self, request, obj):
-        if obj:
-            return (EnrollmentInline,)
-        return []
+        return (EnrollmentInline, ) if obj else []
 
     def save_model(self, request, obj, form, change):
         if not change:
@@ -553,9 +523,7 @@ class GradeAdmin(admin.ModelAdmin):
     readonly_fields = ('teacher_name',)
 
     def get_numeric_grade(self, obj=Grade):
-        if obj.numeric_grade == 0:
-            return "Not Yet Set"
-        return obj.numeric_grade
+        return "Not Yet Set" if obj.numeric_grade == 0 else obj.numeric_grade
     get_numeric_grade.short_description = "Grade"
 
     def teacher_name(self, obj):

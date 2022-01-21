@@ -31,18 +31,17 @@ def login_view(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active and user.is_staff:
-                login(request, user)
-                return redirect(settings.LOGIN_REDIRECT_URL, request.path)
-            else:
-                context.update(
-                    error_message='Your account has been disabled please wait for approval.'
-                )
-                return render(request, template, context)
-        else:
+        if user is None:
             context.update(
                 error_message='Authentication Error - Please check your username and password.')
+        elif user.is_active and user.is_staff:
+            login(request, user)
+            return redirect(settings.LOGIN_REDIRECT_URL, request.path)
+        else:
+            context.update(
+                error_message='Your account has been disabled please wait for approval.'
+            )
+            return render(request, template, context)
     return render(request, template, context)
 
 
